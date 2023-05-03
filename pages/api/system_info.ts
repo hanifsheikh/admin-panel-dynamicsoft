@@ -83,7 +83,7 @@ export default async function handler(
     subdomains = [];
     files.forEach( async (file :string) => {
       if(file.includes('dynamicsoft.tech')) { 
-        if(!(file.toLowerCase().includes('databases') || file.toLowerCase().includes('admin') || file.toLowerCase().includes('pmsapp') || file.toLowerCase().includes('pmsapi') ||  file.toLowerCase() === "dynamicsoft.tech")){
+        if(!(file.toLowerCase().includes('databases') || file.toLowerCase().includes('admin') ||  file.toLowerCase() === "dynamicsoft.tech")){
               await run_shell_command(`crontab -l | grep -q 'rsync -a ~/dynamic-soft-school/ /var/www/apps/${file}' && echo true || echo false `).then(output => {
                 let automatic_update_status = output.stdout.toString();           
                  subdomains.push({subdomain: file, automatic_update: Boolean(automatic_update_status.trim() === 'true') });
