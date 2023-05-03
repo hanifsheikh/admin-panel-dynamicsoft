@@ -215,7 +215,7 @@ const AddSubdomainModal = ({toggleModal, refreshTable}: Props) => {
      <div className="flex items-center justify-center h-full">
         <div className="flex flex-col bg-white w-[800px] p-3 px-5 rounded-xl shadow-3xl">
         <div className="flex border-b justify-between items-center border-[#e1e1e1] pb-1 w-full font-bold">
-           <div className="flex"> Create a new subdomain</div>
+           <div className="flex"> Create A New Subdomain</div>
            {
             isCreating ?            
             <div className="cursor-wait flex text-center h-4 w-4 bg-gray-300 text-white rounded-full"></div>

@@ -46,7 +46,7 @@ const DeleteSubdomainModal = ({toggleModal, refreshTable, domainToDelete}: Props
      <div className="flex items-center justify-center h-full">
         <div className="flex flex-col bg-white w-[800px] p-3 px-5 rounded-xl shadow-3xl">
         <div className="flex border-b justify-between items-center border-[#e1e1e1] pb-1 w-full font-bold">
-           <div className="flex"> Delete subdomain</div>
+           <div className="flex"> Delete Subdomain</div>
            {
             isDeleting ? <div className="cursor-wait flex text-center h-4 w-4 bg-gray-300 text-white rounded-full"></div>
             :<div onClick={()=>toggleModal()} className="cursor-pointer flex text-center h-4 w-4 bg-red-500 text-white rounded-full"></div>

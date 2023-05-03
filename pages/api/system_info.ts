@@ -88,7 +88,7 @@ export default async function handler(
                 let automatic_update_status = output.stdout.toString();           
                  subdomains.push({subdomain: file, automatic_update: Boolean(automatic_update_status.trim() === 'true') });
                  subdomains_count = subdomains.length;
-           })
+           })          
         }     
       }
     });

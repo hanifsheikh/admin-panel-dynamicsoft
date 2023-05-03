@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
-import Image from 'next/image' 
-import {useRouter} from 'next/router'
+import Image from 'next/image'  
 import { signOut } from 'next-auth/react';
 import React, { useCallback, useEffect, useState } from 'react'
 import AddSubdomainModal from '@/components/AddSubdomainModal'
@@ -19,7 +18,6 @@ type Subdomain = {
 }
  
 export default function Dashboard() {
-  const router = useRouter();
  
   const [showModal, setShowModal] = useState<Boolean>(false);
   const [showDeleteModal, setShowDeleteModal] = useState<Boolean>(false);
@@ -107,8 +105,12 @@ export default function Dashboard() {
         <span className={`flex ${inter.className} font-medium mt-0.5 text-white text-sm`}> Add Subdomain</span>
       </button>
  <div className="flex space-x-2">
+ <button className="flex items-center space-x-2 px-5 py-1  rounded-lg bg-white hover:drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)] transition duration-100 ease-in-out border border-[#F7F7F7] drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]">
+        <Image draggable="false" className='flex w-5 h-5 select-none' src={'/icons/backup.png'} alt="backup.png" height={32} width={32}/>
+        <span className={`flex ${inter.className} font-medium mt-[1px] text-[#292929] text-sm`}>Backup</span>
+      </button>
  <button onClick={() => toggleRebootModal()} className="flex items-center space-x-2 px-5 py-1  rounded-lg bg-white hover:drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)] transition duration-100 ease-in-out border border-[#F7F7F7] drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]">
-        <Image draggable="false" className='flex w-4 h-4 select-none' src={'/icons/reboot.png'} alt="reboot.png" height={32} width={32}/>
+        <Image draggable="false" className='flex w-5 h-5 select-none' src={'/icons/reboot.png'} alt="reboot.png" height={32} width={32}/>
         <span className={`flex ${inter.className} font-medium mt-[1px] text-[#292929] text-sm`}>Reboot</span>
       </button>
       <button onClick={logoutClickHandler} className="flex items-center space-x-2 px-5 py-1  rounded-lg bg-white hover:drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)] transition duration-100 ease-in-out border border-[#F7F7F7] drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]">
@@ -175,12 +177,10 @@ export default function Dashboard() {
         <input type="checkbox" name={subdomain.subdomain} defaultChecked={subdomain.automatic_update} onChange={e => handleAutomaticUpdateStatus(e.target.name, e.target.checked)} />
       </td>
       <td className='col-span-1 text-center font-normal text-base'>
-        <div className="flex justify-center items-center space-x-3">        
-          <button className='text-white bg-[#424242] py-1.5 px-2 rounded-lg text-sm shadow-lg hover:shadow transition duration-300 ease-in-out border border-white'>
-                Backup
-          </button>
-          <button onClick={()=>toggleDeleteModal(subdomain.subdomain)} className='text-white bg-[#FF6A63] py-1.5 px-2 rounded-lg text-sm shadow-lg hover:shadow transition duration-300 ease-in-out border border-white'>
-              Delete
+        <div className="flex justify-center items-center space-x-3">  
+        <button onClick={()=>toggleDeleteModal(subdomain.subdomain)} className='flex items-center space-x-1 text-[#FF6A63] bg-white hover:bg-[#FF6A63]/10 py-1.5 px-2 rounded-lg text-sm shadow hover:shadow-inner transition duration-300 ease-in-out border border-slate-100 hover:border-[#FF6A63]/20'>
+        <Image draggable="false" className='flex w-3 h-4.5 select-none' src={'/icons/trash.png'} alt="trash.png" height={42} width={36}/>
+             <span className='flex text-sm font-semibold'> Delete</span>
           </button>
         </div>
       </td>
