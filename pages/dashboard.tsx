@@ -163,7 +163,7 @@ export default function Dashboard() {
         <tr className='grid grid-cols-3 gap-5 border-b border-[#e1e1e1] py-2'>
           <th className='col-span-1 text-left font-semibold text-base'>Full Domain Name</th>
           <th className='flex col-span-1 justify-center font-semibold text-base'>Automatic Update</th>
-          <th className='col-span-1 text-center font-semibold text-base'>Action</th>
+          <th className='col-span-1 text-right font-semibold text-base mr-8'>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -176,8 +176,8 @@ export default function Dashboard() {
       <td className='flex items-center col-span-1 justify-center font-normal text-base'>
         <input type="checkbox" name={subdomain.subdomain} defaultChecked={subdomain.automatic_update} onChange={e => handleAutomaticUpdateStatus(e.target.name, e.target.checked)} />
       </td>
-      <td className='col-span-1 text-center font-normal text-base'>
-        <div className="flex justify-center items-center space-x-3">  
+      <td className='col-span-1 text-right font-normal text-base'>
+        <div className="flex justify-end items-center space-x-3 mr-5">  
         <button onClick={()=>toggleDeleteModal(subdomain.subdomain)} className='flex items-center space-x-1 text-[#FF6A63] bg-white hover:bg-[#FF6A63]/10 py-1.5 px-2 rounded-lg text-sm shadow hover:shadow-inner transition duration-300 ease-in-out border border-slate-100 hover:border-[#FF6A63]/20'>
         <Image draggable="false" className='flex w-3 h-4.5 select-none' src={'/icons/trash.png'} alt="trash.png" height={42} width={36}/>
              <span className='flex text-sm font-semibold'> Delete</span>
