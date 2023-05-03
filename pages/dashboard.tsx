@@ -107,25 +107,25 @@ export default function Dashboard() {
  <div className="flex space-x-2">
  <button className="flex items-center space-x-2 px-5 py-1  rounded-lg bg-white hover:drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)] transition duration-100 ease-in-out border border-[#F7F7F7] drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]">
         <Image draggable="false" className='flex w-5 h-5 select-none' src={'/icons/backup.png'} alt="backup.png" height={32} width={32}/>
-        <span className={`flex ${inter.className} font-medium mt-[1px] text-[#292929] text-sm`}>Backup</span>
+        <span className={`hidden md:flex ${inter.className} font-medium mt-[1px] text-[#292929] text-sm`}>Backup</span>
       </button>
  <button onClick={() => toggleRebootModal()} className="flex items-center space-x-2 px-5 py-1  rounded-lg bg-white hover:drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)] transition duration-100 ease-in-out border border-[#F7F7F7] drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]">
         <Image draggable="false" className='flex w-5 h-5 select-none' src={'/icons/reboot.png'} alt="reboot.png" height={32} width={32}/>
-        <span className={`flex ${inter.className} font-medium mt-[1px] text-[#292929] text-sm`}>Reboot</span>
+        <span className={`hidden md:flex ${inter.className} font-medium mt-[1px] text-[#292929] text-sm`}>Reboot</span>
       </button>
       <button onClick={logoutClickHandler} className="flex items-center space-x-2 px-5 py-1  rounded-lg bg-white hover:drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)] transition duration-100 ease-in-out border border-[#F7F7F7] drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]">
         <Image draggable="false" className='flex w-4 h-4 select-none' src={'/icons/logout.png'} alt="logout.png" height={32} width={32}/>
-        <span className={`flex ${inter.className} font-medium mt-[1px] text-[#292929] text-sm`}>Logout</span>
+        <span className={`hidden md:flex ${inter.className} font-medium mt-[1px] text-[#292929] text-sm`}>Logout</span>
       </button>
  </div>
     </div>
     <div className="py-5"></div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-10 xl:gap-15 2xl:gap-[5rem] text-white">
-      <div className="flex justify-between items-center space-x-5 col-span-1 bg-[#424242] rounded-3xl py-7 px-10 drop-shadow-[0_15px_20px_rgba(66,66,66,0.50)]">      
-      <div className="flex space-x-5 items-center">
-      <Image draggable="false" className='w-14 h-14 select-none' src={'/icons/storage_icon.png'} alt="storage_icon.png" height={72} width={72}/>
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 xl:gap-15 2xl:gap-[5rem] text-white">
+      <div className="flex justify-between items-center space-x-5 col-span-1 bg-[#424242] rounded-3xl lg:rounded-xl xl:rounded-3xl py-7 lg:py-3 xl:py-7 px-10 lg:px-5 xl:px-10 drop-shadow-[0_15px_20px_rgba(66,66,66,0.50)]">      
+      <div className="flex space-x-5 lg:space-x-3 xl:space-x-5 items-center">
+      <Image draggable="false" className='w-14 lg:w-9 h-14 lg:h-9 select-none' src={'/icons/storage_icon.png'} alt="storage_icon.png" height={72} width={72}/>
         <div className="flex flex-col">
-          <strong className={`flex ${inter.className} font-semibold text-base lg:text-lg drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]`}>Storage</strong>
+          <strong className={`flex ${inter.className} font-semibold text-base xl:text-lg drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]`}>Storage</strong>
           <p className={`flex ${inter.className} font-light text-xs lg:text-sm`}>{storage_info} </p>
         </div>
       </div>
@@ -133,54 +133,54 @@ export default function Dashboard() {
         <strong className='font-bold text-lg'>({storage_percentage})</strong>
         </div>
       </div>
-      <div className="flex items-center space-x-5 col-span-1 bg-[#FF6A63] rounded-3xl py-7 px-10 drop-shadow-[0_15px_20px_rgba(255,106,99,0.50)]">      
-        <Image draggable="false" className='w-14 h-14 select-none' src={'/icons/subdomains.png'} alt="subdomains.png" height={72} width={72}/>
+      <div className="flex items-center space-x-5 lg:space-x-3 xl:space-x-5 col-span-1 bg-[#FF6A63] rounded-3xl lg:rounded-xl xl:rounded-3xl py-7 lg:py-3 xl:py-7 px-10 lg:px-5 xl:px-10 drop-shadow-[0_15px_20px_rgba(255,106,99,0.50)]">      
+        <Image draggable="false" className='w-14 lg:w-9 h-14 lg:h-9 select-none' src={'/icons/subdomains.png'} alt="subdomains.png" height={72} width={72}/>
         <div className="flex flex-col">
-          <strong className={`flex ${inter.className} font-semibold text-base lg:text-lg drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]`}>Total Domains</strong>
-          <p className={`flex ${inter.className} font-light text-xs lg:text-sm`}>
+          <strong className={`flex ${inter.className} font-semibold text-base xl:text-lg drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]`}>Total Domains</strong>
+          <p className={`flex ${inter.className} font-light text-xs xl:text-sm`}>
             <>            
             {subdomains_count} {subdomains_count > 1 ? 'Domains' : 'Domain' } running on NGINX server 
             </>
             </p>
         </div>
       </div>
-      <div className="flex items-center space-x-5 col-span-1 bg-[#4CAA98] rounded-3xl py-7 px-10 drop-shadow-[0_15px_20px_rgba(76,170,152,0.50)]">      
-        <Image draggable="false" className='w-14 h-14 select-none' src={'/icons/cpu.png'} alt="cpu.png" height={72} width={72}/>
+      <div className="flex items-center space-x-5 lg:space-x-3 xl:space-x-5 col-span-1 bg-[#4CAA98] rounded-3xl lg:rounded-xl xl:rounded-3xl py-7 lg:py-3 xl:py-7 px-10 lg:px-5 xl:px-10 drop-shadow-[0_15px_20px_rgba(76,170,152,0.50)]">      
+        <Image draggable="false" className='w-14 lg:w-9 h-14 lg:h-9 select-none' src={'/icons/cpu.png'} alt="cpu.png" height={72} width={72}/>
         <div className="flex flex-col">
-          <strong className={`flex ${inter.className} font-semibold text-base lg:text-lg drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]`}>System Information</strong>
-          <p className={`flex ${inter.className} font-light text-xs lg:text-sm`}>PHP: {php_version} | NodeJS: {node_version}</p>
-          <p className={`flex ${inter.className} font-light text-xs lg:text-sm`}>RAM: {memory_info}</p>
+          <strong className={`flex ${inter.className} font-semibold text-base xl:text-lg drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]`}>System Information</strong>
+          <p className={`flex ${inter.className} font-light text-xs xl:text-sm`}>PHP: {php_version} | NodeJS: {node_version}</p>
+          <p className={`flex ${inter.className} font-light text-xs xl:text-sm`}>RAM: {memory_info}</p>
         </div>
       </div>        
     </div>
    <div className="card bg-white p-5 mt-10 rounded-2xl shadow">
-     <div className={`${inter.className} flex text-2xl font-light`}>
+     <div className={`${inter.className} flex text-xl lg:text-2xl font-light`}>
       Subdomain List
     </div>
     <div className="w-full mt-2.5 border-b border-[#F7F7F7]"></div>
     <table className={`w-full ${inter.className}`}>
       <thead>
         <tr className='grid grid-cols-3 gap-5 border-b border-[#e1e1e1] py-2'>
-          <th className='col-span-1 text-left font-semibold text-base'>Full Domain Name</th>
-          <th className='flex col-span-1 justify-center font-semibold text-base'>Automatic Update</th>
-          <th className='col-span-1 text-right font-semibold text-base mr-8'>Action</th>
+          <th className='col-span-1 text-left font-semibold text-xs md:text-sm lg:text-base'>Full Domain Name</th>
+          <th className='flex col-span-1 justify-end md:justify-center font-semibold text-xs md:text-sm lg:text-base'>Automatic Update</th>
+          <th className='col-span-1 text-right font-semibold text-xs md:text-sm lg:text-base mr-8'>Action</th>
         </tr>
       </thead>
       <tbody>
         {subdomains.map((subdomain,index) => {            
     return <React.Fragment key={index+1}>
       <tr className='grid grid-cols-3 gap-5 border-b border-[#e1e1e1] py-2'>
-      <td className='flex col-span-1 items-center text-left font-normal text-base'>
+      <td className='flex col-span-1 items-center text-left font-normal text-sm md:text-base'>
         <a target={'blank'} href={`https://${subdomain.subdomain}`} className='hover:text-[#0070f3] transition duration-200 ease-in-out'>{subdomain.subdomain}</a>
       </td>
-      <td className='flex items-center col-span-1 justify-center font-normal text-base'>
+      <td className='flex items-center col-span-1 justify-end md:justify-center font-normal text-xs md:text-base'>
         <input type="checkbox" name={subdomain.subdomain} defaultChecked={subdomain.automatic_update} onChange={e => handleAutomaticUpdateStatus(e.target.name, e.target.checked)} />
       </td>
-      <td className='col-span-1 text-right font-normal text-base'>
+      <td className='col-span-1 text-right font-normal text-xs md:text-base'>
         <div className="flex justify-end items-center space-x-3 mr-5">  
         <button onClick={()=>toggleDeleteModal(subdomain.subdomain)} className='flex items-center space-x-1 text-[#FF6A63] bg-white hover:bg-[#FF6A63]/10 py-1.5 px-2 rounded-lg text-sm shadow hover:shadow-inner transition duration-300 ease-in-out border border-slate-100 hover:border-[#FF6A63]/20'>
-        <Image draggable="false" className='flex w-3 h-4.5 select-none' src={'/icons/trash.png'} alt="trash.png" height={42} width={36}/>
-             <span className='flex text-sm font-semibold'> Delete</span>
+        <Image draggable="false" className='flex w-2 md:w-3 h-2.5 md:h-[14px] select-none' src={'/icons/trash.png'} alt="trash.png" height={42} width={36}/>
+             <span className='flex text-xs md:text-sm font-semibold'> Delete</span>
           </button>
         </div>
       </td>

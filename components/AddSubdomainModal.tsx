@@ -263,10 +263,10 @@ const AddSubdomainModal = ({toggleModal, refreshTable}: Props) => {
     {SSLSetupFailed && <span className='text-[#ff0000] text-lg align-middle mr-1.5'>&times;</span>} Setup SSL</p>
   </div>
   </div></> : <><div className="flex items-center justify-center space-x-2 mt-10">
-        <input type="text" 
+        <input type="text" autoFocus
         onChange={e => setPrefix(() => e.target.value)} 
           className="flex text-right w-48 border-b-2 focus:border-b-2 border-slate-500/10 focus:border-[#0070f3]  outline-none px-3 py-1 transition duration-100 ease-in-out"
-          placeholder='Subdomain prefix'        
+          placeholder='subdomain prefix'        
         />
         <p className="font-bold">.dynamicsoft.tech</p>
         </div>

@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import Image from 'next/image';
 import { useState } from 'react';
 const inter = Inter({
   subsets:['latin'], 
@@ -39,7 +40,10 @@ const RebootModal = ({toggleModal}: Props) => {
      <div className="flex items-center justify-center h-full">
         <div className="flex flex-col bg-white w-[800px] p-3 px-5 rounded-xl shadow-3xl">
         <div className="flex border-b justify-between items-center border-[#e1e1e1] pb-1 w-full font-bold">
-           <div className="flex"> Reboot VPS</div>
+           <div className="flex items-center space-x-2">
+           <Image draggable="false" className='flex w-5 h-5 select-none' src={'/icons/reboot.png'} alt="reboot.png" height={32} width={32}/>
+             <span className='flex'>Reboot VPS</span>
+             </div>
            {
             isRebooting ? <div className="cursor-wait flex text-center h-4 w-4 bg-gray-300 text-white rounded-full"></div>
             :<div onClick={()=>toggleModal()} className="cursor-pointer flex text-center h-4 w-4 bg-red-500 text-white rounded-full"></div>
@@ -54,9 +58,10 @@ const RebootModal = ({toggleModal}: Props) => {
       </div> :
       <>
       <div className="flex items-center flex-col space-y-3 justify-center space-x-2 mt-10">
-      <p className='flex'><b className='font-bold tracking-widest text-2xl ml-1 text-slate-500'> {captcha} </b> </p>
+      <p className='flex'><b className='font-bold tracking-widest text-2xl ml-1 text-slate-500 select-none' draggable="false"> {captcha} </b> </p>
  
       <input type="text" 
+      autoFocus
       onChange={(e) => {        
         if(e.target.value === captcha){
           setCaptchaMached(() => true)
