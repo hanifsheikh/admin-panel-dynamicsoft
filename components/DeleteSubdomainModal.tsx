@@ -62,7 +62,7 @@ const DeleteSubdomainModal = ({toggleModal, refreshTable, domainToDelete}: Props
       </div> :
       <>
       <div className="flex items-center flex-col space-y-3 justify-center space-x-2 mt-10">
-      <p className='flex'>Write full domain name <b className='font-bold ml-1 text-red-500'> {domainToDelete} </b></p>
+      <p className='flex select-none' draggable="false">Write full domain name <b className='font-bold ml-1 text-red-500'> {domainToDelete} </b></p>
       <input type="text" 
       onChange={e => {
         setDomainName(() => e.target.value);
@@ -83,7 +83,7 @@ const DeleteSubdomainModal = ({toggleModal, refreshTable, domainToDelete}: Props
          <span className={`flex ${inter.className} font-medium mt-0.5 text-white text-sm`}> Delete Subdomain</span>
     </button> 
     </>:
-     <button   className="mb-5 flex items-center space-x-2 px-5 py-2 opacity-10 rounded-lg bg-[#FF6A63] hover:drop-shadow-[0_4px_14px_rgba(255,106,99,0.40)] transition duration-300 ease-in-out border border-red-500 drop-shadow-[0_4px_8px_rgba(255,106,99,0.40)]">
+     <button className="cursor-not-allowed mb-5 flex items-center space-x-2 px-5 py-2 opacity-10 rounded-lg bg-[#FF6A63] hover:drop-shadow-[0_4px_14px_rgba(255,106,99,0.40)] transition duration-300 ease-in-out border border-red-500 drop-shadow-[0_4px_8px_rgba(255,106,99,0.40)]">
      <span className={`flex ${inter.className} font-medium mt-0.5 text-white text-sm`}> Delete Subdomain</span>
 </button> 
    }

@@ -271,9 +271,15 @@ const AddSubdomainModal = ({toggleModal, refreshTable}: Props) => {
         <p className="font-bold">.dynamicsoft.tech</p>
         </div>
         <div className="flex items-center justify-center mt-10">
+          {!prefix ?           
+      <button className="cursor-not-allowed mb-5 flex items-center space-x-2 px-5 py-2 rounded-lg bg-[#0070f3] border border-[#0070f3] drop-shadow-[0_2px_4px_rgba(0,118,255,0.40)] opacity-20">
+           <span className={`flex ${inter.className} font-medium mt-0.5 text-white text-sm`}> Create Subdomain</span>
+      </button> 
+      :
       <button onClick={()=>createSubdomain()} className="mb-5 flex items-center space-x-2 px-5 py-2 rounded-lg bg-[#0070f3] hover:drop-shadow-[0_4px_14px_rgba(0,118,255,0.40)] transition duration-300 ease-in-out border border-[#0070f3] drop-shadow-[0_4px_8px_rgba(0,118,255,0.40)]">
            <span className={`flex ${inter.className} font-medium mt-0.5 text-white text-sm`}> Create Subdomain</span>
       </button> 
+        }
         </div>
         </>
       }
