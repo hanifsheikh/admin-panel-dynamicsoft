@@ -153,16 +153,16 @@ export default function Dashboard() {
         </div>
       </div>        
     </div>
-   <div className="card bg-white p-5 mt-10 rounded-2xl shadow">
+   <div className="card bg-white p-2 md:p-5 mt-10 rounded-2xl shadow">
      <div className={`${inter.className} flex text-xl lg:text-2xl font-light`}>
       Subdomain List
     </div>
-    <div className="w-full mt-2.5 border-b border-[#F7F7F7]"></div>
+    <div className="w-full mt-1 md:mt-2.5 border-b border-[#F7F7F7]"></div>
     <table className={`w-full ${inter.className}`}>
       <thead>
         <tr className='grid grid-cols-3 gap-5 border-b border-[#e1e1e1] py-2'>
-          <th className='col-span-1 text-left font-semibold text-xs md:text-sm lg:text-base'>Full Domain Name</th>
-          <th className='flex col-span-1 justify-end md:justify-center font-semibold text-xs md:text-sm lg:text-base'>Automatic Update</th>
+          <th className='col-span-2 lg:col-span-1 text-left font-semibold text-xs md:text-sm lg:text-base'>Full Domain Name</th>
+          <th className='hidden lg:flex col-span-1 justify-end md:justify-center font-semibold text-xs md:text-sm lg:text-base'>Automatic Update</th>
           <th className='col-span-1 text-right font-semibold text-xs md:text-sm lg:text-base mr-8'>Action</th>
         </tr>
       </thead>
@@ -170,10 +170,10 @@ export default function Dashboard() {
         {subdomains.map((subdomain,index) => {            
     return <React.Fragment key={index+1}>
       <tr className='grid grid-cols-3 gap-5 border-b border-[#e1e1e1] py-2'>
-      <td className='flex col-span-1 items-center text-left font-normal text-sm md:text-base'>
+      <td className='flex col-span-2 lg:col-span-1 items-center text-left font-normal text-sm md:text-base'>
         <a target={'blank'} href={`https://${subdomain.subdomain}`} className='hover:text-[#0070f3] transition duration-200 ease-in-out'>{subdomain.subdomain}</a>
       </td>
-      <td className='flex items-center col-span-1 justify-end md:justify-center font-normal text-xs md:text-base'>
+      <td className='hidden lg:flex items-center col-span-1 justify-end md:justify-center font-normal text-xs md:text-base'>
         <input type="checkbox" name={subdomain.subdomain} defaultChecked={subdomain.automatic_update} onChange={e => handleAutomaticUpdateStatus(e.target.name, e.target.checked)} />
       </td>
       <td className='col-span-1 text-right font-normal text-xs md:text-base'>
